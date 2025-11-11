@@ -1,5 +1,5 @@
 import pytest
-from ..calculator import modulo, max, min, power, abs_val, sqrt, is_odd, is_even, is_positive, is_negative
+from calculator import modulo, max, min, power, abs_val, sqrt, is_odd, is_even, is_positive, is_negative
 
 
 def test_modulo():
