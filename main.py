@@ -1,4 +1,4 @@
-
+#main program that runs a terminal menu for the calculator
 from calculator import modulo, max, min, power, abs_val, sqrt, is_odd, is_even, is_positive, is_negative
 
 def main():

@@ -1,3 +1,4 @@
+#calculator functions
 import math
 #simple calculator app functions (beyond add, subtract, multiply, divide)
 def modulo(a:int | float, b: int | float):
