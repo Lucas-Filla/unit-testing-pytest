@@ -1,45 +1,65 @@
 
+from calculator import modulo, max, min, power, abs_val, sqrt, is_odd, is_even, is_positive, is_negative
 
 def main():
-    switch = 1
-    
-    while(switch):
+    """Main interactive loop for the calculator."""
+    print("=== Advanced Calculator ===")
+    print("Available operations: modulo, max, min, pow, abs, sqrt, is_odd, is_even, is_positive, is_negative")
+    print("Type 'exit' to quit.\n")
 
-        switch = 0
+    while True:
+        operation = input("Enter operation: ").strip().lower()
+        if operation == "exit":
+            print("Goodbye!")
+            break
 
-    return;
+        if operation not in ["modulo", "max", "min", "pow", "abs", "sqrt", "is_odd", "is_even", "is_positive", "is_negative"]:
+            print("Invalid operation. Try again.\n")
+            continue
 
-#simple calculator app functions
-def add(a:int | float, b: int | float):
-    return a + b
+        try:
+            if operation in ["modulo", "pow", "max", "min"]:
 
-def subtract(a:int | float, b: int | float):
-    return a - b
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
 
-def multiply(a:int | float, b: int | float):
-    return a * b
+                if operation == "modulo":
+                    result = modulo(a, b)
+                elif operation == "pow":
+                    result = power(a, b)
+                elif operation == "max":
+                    result = max(a, b)
+                elif operation == "min":
+                    result = min(a, b)
 
-def divide(a:int | float, b: int | float):
-    return a / b
+            if operation in ["abs", "sqrt", "is_positive", "is_negative"]:
+                
+                a = float(input("Enter number: "))
 
-def modulo(a:int | float, b: int | float):
-    return a % b
+                if operation == "abs":
+                    result = abs_val(a)
+                elif operation == "sqrt":
+                    result = sqrt(a)
+                elif operation == "is_positive":
+                    result = is_positive(a)
+                elif operation == "is_negative":
+                    result = is_negative(a)
+                
+            
+            if operation in ["is_even", "is_odd"]:
+                
+                a = int(input("Enter number: "))
 
-def power(a:int | float, b: int | float):
-    return pow(a, b)
+                if operation == "is_even":
+                    result = is_even(a)
+                elif operation == "is_odd":
+                    result = is_odd(a)
 
-def abs(a:int | float):
-    return abs(a)
+            print(f"Result: {result}\n")
 
-def sqrt(a:int | float):
-    return sqrt(a)
+        except ValueError as e:
+            print(f"Error: {e}\n")
 
-def max(a:int | float, b: int | float):
-    return max(a,b)
 
-def min(a:int | float, b: int | float):
-    return min(a,b)
-
-#run from main
 if __name__ == "__main__":
     main()
